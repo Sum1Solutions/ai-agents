@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Medical Agents
+
+AI Medical Agents is a Next.js application that allows users to interact with AI-powered medical agents. These agents can simulate various roles in a medical setting, such as physicians, front desk staff, and certified nursing assistants (CNAs).
+
+## Overview
+
+This application demonstrates the integration of OpenAI's GPT models with a modern web application stack. It allows users to:
+
+1. Create and manage AI agents with specific roles and tasks
+2. Interact with these agents to generate responses based on their defined roles and tasks
+3. View and manage multiple agents simultaneously
+
+## Technology Stack
+
+- **Frontend**: Next.js with TypeScript and Tailwind CSS
+- **Backend**: Next.js API routes
+- **AI Integration**: OpenAI API
+- **Containerization**: Docker
+
+## Project Structure
+
+The project follows a typical Next.js application structure:
+
+```
+ai-medical-project/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── generate/
+│   │   │       └── route.ts
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── AgentForm.tsx
+│   │   ├── AgentList.tsx
+│   │   └── AgentDetail.tsx
+│   └── types/
+│       └── index.ts
+├── public/
+├── .env.local
+├── next.config.js
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── package.json
+├── Dockerfile
+└── docker-compose.yml
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Docker and Docker Compose installed on your machine
+- An OpenAI API key
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the Application
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd ai-medical-project
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Create a `.env.local` file in the project root and add your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your-openai-api-key-here
+   ```
 
-## Learn More
+3. Build and run the Docker container:
+   ```
+   docker-compose up --build
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open your browser and navigate to `http://localhost:3000` to access the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How It Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Agent Creation**: Users can create AI agents by specifying a name, role (physician, front desk, or CNA), and a specific task.
 
-## Deploy on Vercel
+2. **Agent List**: Created agents are displayed in a list, allowing users to select and interact with them.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Agent Interaction**: When an agent is selected, users can generate responses based on the agent's role and task.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **AI Integration**: The application uses the OpenAI API to generate contextual responses for each agent interaction.
+
+## Component Breakdown
+
+- `AgentForm`: Allows users to create new AI agents.
+- `AgentList`: Displays all created agents and allows selection.
+- `AgentDetail`: Shows details of a selected agent and facilitates interaction.
+- `generate/route.ts`: API route that interfaces with the OpenAI API to generate responses.
+
+## Docker Configuration
+
+The application is containerized using Docker, which ensures consistency across different development and deployment environments.
+
+- `Dockerfile`: Defines the container image for the application.
+- `docker-compose.yml`: Orchestrates the container setup, including environment variables and port mapping.
+
+## Development
+
+To run the application in development mode:
+
+1. Install dependencies: `npm install`
+2. Run the development server: `npm run dev`
+
+Make sure to have the `.env.local` file set up with your OpenAI API key.
+
+## Contributing
+
+Contributions to improve the AI Medical Agents project are welcome. Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature-branch-name`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-branch-name`
+5. Submit a pull request
+
+## License
+
+[TBD]
+
+---
+
+For any questions or support, please [provide contact information or link to issues page].
