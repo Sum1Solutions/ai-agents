@@ -1,6 +1,6 @@
-# AI Medical Agents
+# AI Agents
 
-AI Medical Agents is a Next.js application that allows users to interact with AI-powered medical agents. These agents can simulate various roles in a medical setting, such as physicians, front desk staff, and certified nursing assistants (CNAs).
+AI Agents is a Next.js application that allows users to interact with AI-powered agents. These agents can simulate various roles in a medical setting, such as physicians, front desk staff, and certified nursing assistants (CNAs). The goal of this project was to help experience the capabilities of OpenAI's GPT models in a practical setting developing usable software solutions.
 
 ## Overview
 
@@ -110,7 +110,7 @@ Make sure to have the `.env.local` file set up with your OpenAI API key.
 
 ## Contributing
 
-Contributions to improve the AI Medical Agents project are welcome. Please follow these steps:
+Contributions to improve the AI Agents project are welcome. Please follow these steps:
 
 1. Fork the repository
 2. Create a new branch: `git checkout -b feature-branch-name`
@@ -120,8 +120,8 @@ Contributions to improve the AI Medical Agents project are welcome. Please follo
 
 ## License
 
-[TBD]
+Apache License 2.0
 
 ---
 
-For any questions or support, please [provide contact information or link to issues page].
+Use As-Is -- like everything you get for free on the Internet. No warranty expressed or implied. Use at your own risk.
